@@ -5,7 +5,8 @@ function App() {
 
   return (
     <div>
-      <CameraCard />
+      <CameraCard/>
+      <CameraCard/>
     </div>
   )
 }
