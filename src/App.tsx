@@ -21,6 +21,8 @@ function App() {
           src="./src/assets/images/bg-pattern-bottom.svg"
         />
       </div>
+    <div>
+      <CameraCard/>
     </div>
   );
 }
