@@ -1,28 +1,27 @@
-import React from "react";
 import CameraCard from "./components/CameraCard/CameraCard";
+import RefreshButton from "./components/ButtonF5/f5button";
 
 function App() {
   return (
     <div className="h-screen bg-[#18a1ad]">
-      <div className="absolute top-4 left-4 w-96">
+      <div className="absolute top-0 left-0 w-1/2 h-auto">
         <img
-          className="flex items-center justify-center w-full h-auto max-w-none"
+          className="w-full h-auto w-80"
           src="./src/assets/images/bg-pattern-top.svg"
         />
       </div>
 
-      <div className="flex items-center justify-center h-full relative z-10">
+      <div className="items-center justify-center h-full relative z-10 grid">
         <CameraCard />
+        <RefreshButton />
       </div>
 
-      <div className="flex items-center justify-center absolute bottom-4 right-4 w-">
+      <div className="absolute bottom-0 right-0 w-1/2 h-auto ">
         <img
-          className="w-full h-auto max-w-none"
+          className="w-full h-auto "
           src="./src/assets/images/bg-pattern-bottom.svg"
         />
       </div>
-    <div>
-      <CameraCard/>
     </div>
   );
 }
