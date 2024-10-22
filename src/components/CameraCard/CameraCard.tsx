@@ -14,14 +14,14 @@ interface newPokemon {
 export default function CameraCard() {
   const [pokemon, setPokemon] = useState<newPokemon | null>(null);
   const [x, setX] = useState(Math.ceil(Math.random() * 151));
-  const [loading, setLoading] = useState(false); // Estado de carga
+  const [loading, setLoading] = useState(false);
 
   function changeX() {
     setX(Math.ceil(Math.random() * 151));
   }
 
   useEffect(() => {
-    setLoading(true); // Inicia la carga
+    setLoading(true);
     fetch(`https://pokeapi.co/api/v2/pokemon/${x}`)
       .then((res) => res.json())
       .then((data) => {
@@ -37,11 +37,11 @@ export default function CameraCard() {
           deffense: stats[2].base_stat,
         };
         setPokemon(newPokemon);
-        setLoading(false); // Finaliza la carga
+        setLoading(false);
       })
       .catch((error) => {
         console.error("Error fetching Pokémon:", error);
-        setLoading(false); // Finaliza la carga en caso de error
+        setLoading(false);
       });
   }, [x]);
 
@@ -56,9 +56,9 @@ export default function CameraCard() {
           />
         </header>
 
-        <div className="-mt-28">
+        <div className="-mt-28 bg-white rounded-full">
           {loading ? (
-            <div className="w-52 h-52 border-8 border-t-8 border-blue-500 rounded-full animate-spin bg-black mx-auto relative"></div>
+            <div className="w-52 h-52  border-t-8 border-black rounded-full animate-spin  mx-auto relative "></div>
           ) : (
             <img
               className="w-52 h-52 rounded-full bg-white border-4 border-white mx-auto"
